@@ -1,0 +1,84 @@
+/* Parent container defines the sizing context */
+.headlineWrapper {
+  width: 100%;
+  display: block;
+  container-type: inline-size;
+
+  /* 📌 Prevent shrink-to-fit and FORCE container width */
+  min-width: 100%;
+  max-width: 100%;
+}
+
+/* Headline scales based on the wrapper width */
+.headline {
+  display: block;
+  width: 100%;
+  color: white;
+  line-height: 0.9;
+
+  /* Fluid font scaling based on viewport width */
+  font-size: clamp(2rem, 8vw, 12rem);
+  font-family: 'Bitcrusher', sans-serif;
+
+  /* Ensure single line per .line span for animation */
+  white-space: nowrap;
+}
+
+
+
+/* Each fixed-height line */
+.line {
+  position: relative;
+  display: block;
+  height: 1em; /* adjust if font size changes a lot */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+/* Phrase layers */
+.phrase {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  transform: translateY(110%);
+  animation: verticalSwitch 10s infinite;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primary {
+  animation-delay: 0s;
+}
+
+.secondary {
+  animation-delay: 5s;
+}
+
+/* Inline coffee text + icon */
+.coffeeInline {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35em;
+}
+
+.beanIcon {
+  width: 1em;
+  height: 1em;
+  transform: translateY(5px);
+}
+
+@keyframes verticalSwitch {
+  0% { transform: translateY(100%); }
+  10% { transform: translateY(0%); }
+  40% { transform: translateY(0%); }
+  50% { transform: translateY(-120%); }
+  100% { transform: translateY(-120%); }
+}
+
+@media (max-width: 888px) {
+  .headline {
+    display: none;
+  }
+}

@@ -1,0 +1,158 @@
+.loaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loaderContainer.exit {
+  animation: shrinkUp 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.3) forwards;
+}
+
+/* Layer 1: Main Background */
+.backgroundLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #664237;
+  z-index: 1;
+}
+
+/* Layer 2: Loading Amount with Wavy Top Edge */
+.loadingLayer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    130deg,
+    #413430 0%,
+    #42322d 14.28%,
+    #32241f 28.56%,
+    #3d2c27 42.84%,
+    #37231d 57.12%,
+    #292423 71.4%,
+    #3d2b26 85.68%,
+    #413430 100%
+  );
+  background-size: 400% 400%;
+  animation: rainbow-wave 6s ease-in-out infinite;
+  z-index: 2;
+  transition: height 0.3s ease-out;
+  overflow: visible;
+}
+
+.loadingLayer::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: inherit;
+  border-radius: 50%;
+  animation: wave-animation 2s ease-in-out infinite;
+}
+
+@keyframes rainbow-wave {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-10px) scaleY(0.8);
+  }
+}
+
+.wavyEdge {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+
+/* Added smooth wave animation with fluid oscillation */
+.waveAnimation {
+  animation: waveFlow 6s ease-in-out infinite;
+}
+
+@keyframes waveFlow {
+  0% {
+    d: path("M 0,60 C 200,30 400,90 600,60 C 800,30 1000,90 1200,60 L 1200,120 L 0,120 Z");
+  }
+  50% {
+    d: path("M 0,60 C 200,90 400,30 600,60 C 800,90 1000,30 1200,60 L 1200,120 L 0,120 Z");
+  }
+  100% {
+    d: path("M 0,60 C 200,30 400,90 600,60 C 800,30 1000,90 1200,60 L 1200,120 L 0,120 Z");
+  }
+}
+
+/* Layer 3: Percentage Counter */
+.counterContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counterExit {
+  /* Added exit animation so percentage text disappears when loader exits */
+  animation: fadeOutAndScale 0.6s cubic-bezier(0.6, 0.04, 0.98, 0.3) forwards;
+}
+
+.percentageText {
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 700;
+  color: white;
+  font-family: "Bitcrusher", Arial, sans-serif;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+  /* Added smooth transition for percentage number animation */
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Shrink animation: Loading screen shrinks from bottom to top with curved edge */
+@keyframes shrinkUp {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+    opacity: 1;
+  }
+}
+
+/* Added fadeOutAndScale animation for percentage text exit */
+@keyframes fadeOutAndScale {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}

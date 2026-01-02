@@ -1,0 +1,80 @@
+.ctaButton {
+  --color-fill: #F97316;
+  --color-outline: #3F3F3F;
+
+  background-color: var(--color-fill);
+  color: var(--color-outline);
+  border: 3px solid var(--color-outline);
+
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 26px;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+
+  transition:
+    border-radius 1.2s ease-in-out,
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease;
+    z-index: 5;
+}
+
+/* Hover state */
+.ctaButton:hover {
+  background-color: #3F3F3F;
+  color: #F97316;
+  border-color: #F97316;
+  border-radius: 16px;
+}
+
+
+/* Scroll Animation */
+.text,
+.textClone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+
+  /* NEW: hardcoded left padding for arrow spacing */
+  padding-left: 10px;
+
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.text {
+  transform: translate(-50%, 0);
+}
+
+.textClone {
+  transform: translate(-50%, 180%);
+}
+
+.ctaButton:hover .text {
+  transform: translate(-50%, -180%);
+}
+
+.ctaButton:hover .textClone {
+  transform: translate(-50%, 0);
+}
+
+.ctaButton svg {
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ctaButton:hover svg {
+  transform: translateX(25px) rotate(-45deg);
+}

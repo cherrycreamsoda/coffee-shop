@@ -1,0 +1,96 @@
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: calc(70vw - 70px);
+  max-width: none;
+}
+
+.itemsTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #494949;
+  margin: 0;
+}
+
+.itemsList {
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.itemPrice{
+  color: #707070;
+
+}
+
+.menuItem {
+  padding: 16px 0;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3f3f3f;
+  margin: 0;
+}
+
+.itemHeader{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.itemDescription {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.separator {
+  height: 1px;
+  background-color: #777777;
+  margin-top: 16px;
+}
+
+.menuItem:last-child .separator {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .itemsContainer {
+    width: calc(100vw - 48px);
+    gap: 16px;
+  }
+
+  .itemsList{
+      padding-right: 0;
+  }
+
+  .itemsTitle {
+    font-size: 18px;
+  }
+
+  .menuItem {
+    padding: 12px 0;
+  }
+
+  .itemName {
+    font-size: 15px;
+  }
+
+  .itemDescription {
+    font-size: 13px;
+  }
+}

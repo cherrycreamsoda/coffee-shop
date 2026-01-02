@@ -1,0 +1,115 @@
+.aboutPage {
+  background-color: #353535;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.aboutContainer {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: #4c3c24;
+  color: #9b7d4c;
+  border: 2px solid #9b7d4c;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: #9b7d4c;
+  color: #4c3c24;
+  border-color: #4c3c24;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #9b7d4c;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  background: #2a2a2a;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  color: #9b7d4c;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.text {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.statsCard {
+  background-color: #353535;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #4c3c24;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 36px;
+  font-weight: 800;
+  color: #9b7d4c;
+}
+
+.statLabel {
+  color: #9ca3af;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 888px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+}

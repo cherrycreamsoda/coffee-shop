@@ -1,0 +1,42 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(0.5rem);
+  border-bottom: 1px solid #ffffff00;
+  z-index: 50;
+  background-color: rgba(26, 26, 26, 0);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.menuButton {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuButton:hover {
+  color: var(--color-zinc-400);
+}
