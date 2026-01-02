@@ -1,0 +1,129 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "ImpactSlim"; /* your custom name */
+  src: local("Roboto"),
+    url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bitcrusher";
+  src: url("/fonts/bitcrusher-condensed-bd.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  /* Colors */
+  --color-background: oklch(0.08 0 0);
+  --color-foreground: oklch(0.98 0 0);
+
+
+  --color-zinc-400: #a1a1a1;
+  --color-zinc-500: #737373;
+  --color-zinc-700: #3f3f3f;
+  --color-zinc-800: #27272a;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+
+  /* Border Radius */
+  --radius-lg: 0.625rem;
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Hide scrollbar */
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  line-height: 1.5;
+  font-size: 1rem;
+  /* Changed to block content from flash, but ALLOWING visibility for the Loader itself */
+  /* We use opacity: 1 and visibility: visible as base, but hide the main content container via JS or specific classes */
+  transition: opacity 0.5s ease-in;
+  /* Hide native cursor */
+  cursor: none;
+}
+
+/* Removed the aggressive body hiding that caused the black screen */
+/* Instead, we will hide the main content wrapper */
+.main-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.main-content.is-ready {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-ready {
+  /* Keep this for any other global ready states if needed */
+}
+
+a {
+  cursor: none;
+}
+
+/* Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+}
+h5 {
+  font-size: 1.125rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+/* Text Outline Effect for Hero Headlines */
+.text-outline {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+}
+
+/* Smooth Transitions */
+a,
+button {
+  transition: all 0.3s ease;
+}

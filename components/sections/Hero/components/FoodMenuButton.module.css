@@ -1,0 +1,101 @@
+.buttonContainer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonContainer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foodMenuButton {
+  --color-fill: #f97316;
+  --color-outline: #3f3f3f;
+
+  background-color: var(--color-fill);
+  color: var(--color-outline);
+  border: 3px solid var(--color-outline);
+
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 50%;
+  padding: 0;
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+  z-index: 5;
+}
+.foodMenuButton svg {
+  transform: scale(1.2);
+}
+
+/* Hover state */
+.foodMenuButton:hover {
+  background-color: #3f3f3f;
+  color: #f97316;
+  border-color: #f97316;
+}
+
+/* Icon animation on hover */
+.foodMenuButton svg {
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foodMenuButton:hover svg {
+  transform: scale(1.1);
+}
+
+/* Added tooltip styles */
+.tooltip {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  color: #e8e8e8;
+  outline: 2px solid #e8e8e8;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  animation: slideDown 0.2s ease-out;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

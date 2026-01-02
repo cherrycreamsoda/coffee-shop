@@ -1,0 +1,88 @@
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+/* IMAGE (middle layer) */
+.heroImage {
+  height: 100%;
+  width: auto; /* keeps aspect ratio */
+  max-width: none; /* prevents shrinking based on width */
+  object-fit: contain;
+
+  transform-origin: center;
+  transform: scale(2.5) translate(5%, -1%);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* SHARED TEXT STYLE */
+.heroText {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bitcrusher", sans-serif;
+  bottom: 100px;
+  font-family: "Bitcrusher", sans-serif;
+  /* Using fluid typography with clamp() for responsive text that shrinks on smaller screens */
+  font-size: clamp(4rem, 24vw, 11.75rem);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.heroTextSmall {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-family: "Bitcrusher", sans-serif;
+  bottom: 90px;
+  transform: translateX(-60px);
+  /* Using fluid typography with clamp() for responsive text that shrinks on smaller screens */
+  font-size: clamp(1.5rem, 5.4vw, 3rem);
+  font-weight: 900;
+  white-space: nowrap;
+  color: #ffffff; /* dark fill */
+  z-index: 3;
+}
+
+.highlight {
+  color: #413430;
+}
+
+/* FILLED TEXT — hidden under SVG */
+.fillText {
+  color: #ffffff; /* dark fill */
+  z-index: 1;
+}
+
+/* STROKE TEXT — visible outline */
+.strokeText {
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+  text-stroke: 1px #ffffff;
+  z-index: 3;
+}
+
+/* Desktop grid behavior (unchanged) */
+@media (min-width: 1024px) {
+  .imageContainer {
+    grid-column: span 4;
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 888px) {
+  .heroTextSmall {
+    transform: translateX(-14vw);
+    font-size: clamp(1.2rem, 4.8vw, 2.64em);
+  }
+}

@@ -1,0 +1,104 @@
+Category: BREAKFAST
+Title: Full English
+Description: Bacon, sausages, fried eggs, beans, mushrooms, hash brown & toast
+Price: 12.95
+
+Category: BREAKFAST
+Title: Eggs on Toast
+Description: Scrambled, fried or poached eggs on white or granary toast
+Price: 6.50
+
+Category: BREAKFAST
+Title: Vegetarian Breakfast
+Description: Veggie sausages, eggs, grilled tomato, mushrooms, beans & toast
+Price: 10.25
+
+Category: BREAKFAST
+Title: Smashed Avocado
+Description: Smashed avocado, poached eggs on sourdough
+Price: 11.50
+
+Category: BRUNCH
+Title: Eggs Benedict
+Description: Toasted English muffin, poached eggs & hollandaise
+Price: 8.50
+
+Category: BRUNCH
+Title: Omelette
+Description: Choice of cheese, mushroom, onion, pepper or ham
+Price: 9.95
+
+Category: SWEET BREAKFAST
+Title: French Toast
+Description: Brioche French toast with maple syrup
+Price: 10.50
+
+Category: SWEET BREAKFAST
+Title: Pancakes
+Description: American pancakes with maple syrup
+Price: 8.00
+
+Category: SANDWICHES
+Title: Tuna Mayo Sandwich
+Description: Tuna mayo, cherry tomatoes & mixed leaves
+Price: 8.50
+
+Category: SANDWICHES
+Title: Chicken & Bacon Sandwich
+Description: Grilled chicken, bacon, mayo & salad
+Price: 9.50
+
+Category: SANDWICHES
+Title: Cheese & Chutney Sandwich
+Description: Mature cheddar with apple chutney
+Price: 8.50
+
+Category: HOT DRINKS
+Title: Cappuccino
+Description:
+Price: 3.45
+
+Category: HOT DRINKS
+Title: Latte
+Description:
+Price: 3.75
+
+Category: HOT DRINKS
+Title: Americano
+Description:
+Price: 3.10
+
+Category: HOT DRINKS
+Title: Flat White
+Description:
+Price: 3.10
+
+Category: HOT DRINKS
+Title: Hot Chocolate
+Description:
+Price: 4.10
+
+Category: COLD DRINKS
+Title: Iced Latte
+Description:
+Price: 3.60
+
+Category: COLD DRINKS
+Title: Fresh Orange Juice
+Description:
+Price: 4.50
+
+Category: COLD DRINKS
+Title: Still or Sparkling Water
+Description:
+Price: 2.20
+
+Category: TREATS
+Title: Homemade Brownie
+Description: Gluten-free chocolate brownie
+Price: 3.50
+
+Category: TREATS
+Title: Fruit Scone
+Description: Served with butter & jam
+Price: 3.75

@@ -1,0 +1,197 @@
+/* Complete restructure to 3-column grid layout */
+
+/* Front Page - Main Grid Container */
+.frontPage {
+  min-height: 100vh;
+  padding: 0 30px;
+  padding-top: 76px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* Main Section Base Styles */
+.mainSection {
+  display: grid;
+}
+
+/* First Main Section - Left Column */
+.firstMainSection {
+  grid-template-rows: 0.1fr 1fr;
+}
+
+/* Removed background color, kept layout flex properties */
+.firstMainSectionTop {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: top;
+  height: 100%;
+  width: 100%;
+}
+
+.firstMainSectionBottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Second Main Section - Center Column */
+/* Removed background color, kept flex centering layout */
+.secondMainSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
+/* Third Main Section - Right Column */
+.thirdMainSection {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+/* Removed background color, kept layout flex properties */
+.thirdMainSectionTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  container-type: inline-size;
+}
+
+.thirdMainSectionBottom {
+  padding-top: 20px;
+  justify-self: end; /* grid alignment – fine */
+  width: 270px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column; /* vertical spacing */
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.reviewsContainer {
+  display: flex;
+  align-items: right;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.ctaButton {
+  width: 300px; /* increased width */
+  height: 50px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 26px;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+
+  padding-left: 20px; /* arrow spacing included */
+  padding-right: 5px;
+
+  transition: border-radius 1.2s ease-in-out, background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+/* Add responsive design breakpoints for screens under 888px */
+
+/* Tablet and smaller screens (888px and below) */
+@media (max-width: 888px) {
+  .frontPage {
+    grid-template-columns: 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px;
+    min-height: auto;
+  }
+
+  .mainSection {
+    min-height: auto;
+  }
+
+  .firstMainSection {
+    height: calc(20vh - 39px);
+  }
+
+  .firstMainSectionTop {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .firstMainSectionBottom {
+    display: none;
+  }
+
+  .secondMainSection {
+    height: calc(80vh - 59px);
+    transform: none;
+  }
+
+  .thirdMainSection {
+    grid-template-rows: auto auto;
+  }
+
+  .thirdMainSectionTop {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .thirdMainSectionBottom {
+    width: 100%;
+    justify-self: start;
+  }
+}
+
+/* Mobile screens (640px and below) */
+@media (max-width: 640px) {
+  .frontPage {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 30px;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .secondMainSection {
+    min-height: 250px;
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  .frontPage {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 24px;
+    padding-top: 70px;
+  }
+
+  .secondMainSection {
+    min-height: 200px;
+  }
+}

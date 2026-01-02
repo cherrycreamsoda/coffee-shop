@@ -1,0 +1,103 @@
+.sidebar {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 10px;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    grid-column: span 2;
+  }
+}
+
+.decoration {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dot1,
+.dot2,
+.dot3 {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.dot1 {
+  background-color: var(--color-zinc-700);
+}
+
+.dot2 {
+  background-color: #492e27;
+}
+
+.dot3 {
+  background-color: var(--color-orange-500);
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: var(--color-zinc-400);
+  line-height: 1.6;
+  max-width: 20rem;
+  margin: 0;
+}
+
+/* Learn More Link with scroll effect */
+.learnMoreLink {
+  display: inline-block;
+  position: relative;   /* Needed for absolute positioning of spans */
+  overflow: hidden;     /* Hide clone outside */
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  line-height: 1.2;
+  height: 1.2em;        /* Matches one line of text */
+}
+
+.linkText,
+.linkTextClone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.linkText {
+  transform: translateY(0);
+}
+
+.linkTextClone {
+  transform: translateY(100%);
+}
+
+.learnMoreLink:hover .linkText {
+  transform: translateY(-100%);
+}
+
+.learnMoreLink:hover .linkTextClone {
+  transform: translateY(0);
+}
+
+/* Arrow animation */
+.learnMoreLink svg {
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.learnMoreLink:hover svg {
+  transform: rotate(-45deg);
+}
+
+/* Optional hover color */
+.learnMoreLink:hover {
+  color: var(--color-orange-500);
+}
